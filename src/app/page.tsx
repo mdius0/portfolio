@@ -1,18 +1,18 @@
 "use client"
 
-import { useGSAP } from "@gsap/react"
-import gsap from "gsap"
-import { Observer } from "gsap/Observer"
+// import { useGSAP } from "@gsap/react"
+// import gsap from "gsap"
+// import { Observer } from "gsap/Observer"
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useRef, useState } from "react"
+// import { useEffect, useRef, useState } from "react"
 
 type fn = (a: number) => number
 
 export default function page() {
   // gsap.registerPlugin(Observer)
   // let current = 0
-  const ref = useRef(null)
+  // const ref = useRef(null)
   // const [animating, setAnimating] = useState(false)
   // const [currentIndex, setCurrentIndex] = useState(-1)
   // const [outerWrappers, setOuterWrapper] = useState(() => { return gsap.utils.toArray(".outer") })
@@ -70,7 +70,7 @@ export default function page() {
   // }, { scope: ref })
 
   return (
-    <div className="mx-auto max-w-7xl flex flex-col items-center justify-center gap-2" ref={ref}>
+    <div className="mx-auto max-w-7xl flex flex-col items-center justify-center gap-2">
       <section className="flex flex-col items-center justify-center h-screen bg-zinc-900 w-full relative p-16 gap-4">
         <h1 className="section-heading text-white font-bold text-7xl">mdius</h1>
 

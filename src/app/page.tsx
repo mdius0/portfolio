@@ -1,6 +1,5 @@
 "use client"
 
-import Icons from "@/components/Icons"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { Observer } from "gsap/Observer"

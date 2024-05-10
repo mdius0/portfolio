@@ -9,7 +9,7 @@ import { useEffect, useRef, useState } from "react"
 
 type fn = (a: number) => number
 
-export default () => {
+export default function page() {
   // gsap.registerPlugin(Observer)
   // let current = 0
   const ref = useRef(null)

@@ -1,4 +1,4 @@
-export default () => {
+export default function Navbar() {
     return (
         <div className="max-w-7xl mx-auto flex items-center justify-center w-full z-10 fixed h-16 top-4">
             {/* <div className="max-w-7xl mx-auto">

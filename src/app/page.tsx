@@ -6,11 +6,12 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { ArrowDown } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function page() {
+  const [aboutState, setAboutState] = useState(0)
   const ref = useRef(null)
   useGSAP(() => {
     const t1 = gsap.timeline({
@@ -33,12 +34,14 @@ export default function page() {
         start: "0% 0%",
         endTrigger: ".next",
         end: "0% 100%",
-        markers: true,
         onUpdate: (self) => {
-          if (self.progress >= 0.25) console.log("25%")
-          if (self.progress >= 0.5) console.log("50%")
-          if (self.progress >= 0.75) console.log("75%")
-          if (self.progress >= 1.0) console.log("100%")
+          setAboutState(0)
+          if (self.progress >= 0.25) setAboutState(1)
+          if (self.progress >= 0.5) setAboutState(2)
+          if (self.progress >= 0.75) setAboutState(3)
+          if (self.progress >= 1.0) setAboutState(4)
+
+          console.log(aboutState)
         },
 
         // onEnter: () => {
@@ -56,6 +59,7 @@ export default function page() {
 
   return (
     <div className="mx-auto max-w-7xl flex flex-col items-center justify-center" ref={ref}>
+      <div className="fixed top-0 w-full bg-zinc-900 border border-white p-2"></div>
       <section className="flex flex-col items-center justify-center h-screen bg-zinc-900 w-full relative p-16 gap-4 hero">
         <h1 className="section-heading text-white font-bold text-7xl">mdius</h1>
 
@@ -73,7 +77,7 @@ export default function page() {
           <ArrowDown />
         </div>
       </section>
-      <section className="flex flex-col items-start justify-center h-screen bg-red-500 w-full relative p-16 about">
+      <section className="flex flex-col items-start justify-center h-screen bg-red-500 w-full relative p-16 about bg-grainy">
         <h1 className="section-heading text-zinc-900 font-bold text-9xl about-content">About me</h1>
 
         <div className="w-full h-1/2 flex items-center justify-center">
@@ -86,18 +90,42 @@ export default function page() {
               <div className="w-full hover:w-[150%] transition-all duration-200 h-full bg-zinc-800"></div>
             </div>
           </div>
-          <div className="h-full w-[80%] mx-4 flex flex-col items-start justify-start about-content">
+          {aboutState == 0 && <div className="h-full w-[80%] mx-4 flex flex-col items-start justify-start about-content">
             <h3 className="text-5xl font-bold text-zinc-900">Tab One</h3>
             <p className="text-xl font-semibold text-zinc-800 my-2">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet itaque quibusdam debitis, voluptas minima laborum qui cupiditate. Totam, recusandae illum. Eos earum libero exercitationem quisquam necessitatibus totam, nobis ullam.
             </p>
-          </div>
+          </div>}
+          {aboutState == 1 && <div className="h-full w-[80%] mx-4 flex flex-col items-start justify-start about-content">
+            <h3 className="text-5xl font-bold text-zinc-900">Tab 2</h3>
+            <p className="text-xl font-semibold text-zinc-800 my-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet itaque quibusdam debitis, voluptas minima laborum qui cupiditate. Totam, recusandae illum. Eos earum libero exercitationem quisquam necessitatibus totam, nobis ullam.
+            </p>
+          </div>}
+          {aboutState == 2 && <div className="h-full w-[80%] mx-4 flex flex-col items-start justify-start about-content">
+            <h3 className="text-5xl font-bold text-zinc-900">Tab 3</h3>
+            <p className="text-xl font-semibold text-zinc-800 my-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet itaque quibusdam debitis, voluptas minima laborum qui cupiditate. Totam, recusandae illum. Eos earum libero exercitationem quisquam necessitatibus totam, nobis ullam.
+            </p>
+          </div>}
+          {aboutState == 3 && <div className="h-full w-[80%] mx-4 flex flex-col items-start justify-start about-content">
+            <h3 className="text-5xl font-bold text-zinc-900">Tab 4</h3>
+            <p className="text-xl font-semibold text-zinc-800 my-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet itaque quibusdam debitis, voluptas minima laborum qui cupiditate. Totam, recusandae illum. Eos earum libero exercitationem quisquam necessitatibus totam, nobis ullam.
+            </p>
+          </div>}
+          {aboutState == 4 && <div className="h-full w-[80%] mx-4 flex flex-col items-start justify-start about-content">
+            <h3 className="text-5xl font-bold text-zinc-900">Tab 5</h3>
+            <p className="text-xl font-semibold text-zinc-800 my-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet itaque quibusdam debitis, voluptas minima laborum qui cupiditate. Totam, recusandae illum. Eos earum libero exercitationem quisquam necessitatibus totam, nobis ullam.
+            </p>
+          </div>}
         </div>
 
         <div className="absolute w-8 h-8 bottom-2 left-2 border-l-4 border-b-4 border-l-zinc-900 border-b-zinc-900"></div>
         <div className="absolute w-8 h-8 top-2 right-2 border-t-4 border-r-4 border-r-zinc-900 border-t-zinc-900"></div>
       </section>
-      
+
       <div className="h-screen"></div>
       <div className="h-screen"></div>
       <div className="h-screen"></div>

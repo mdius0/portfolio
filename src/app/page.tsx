@@ -1,17 +1,20 @@
 "use client"
 
+import { cn } from "@/lib/utils"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { ArrowDown } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { useRef, useState } from "react"
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function page() {
   const [aboutState, setAboutState] = useState(0)
+  const router = useRouter()
   const ref = useRef(null)
   useGSAP(() => {
     const t1 = gsap.timeline({
@@ -39,9 +42,6 @@ export default function page() {
           if (self.progress >= 0.25) setAboutState(1)
           if (self.progress >= 0.5) setAboutState(2)
           if (self.progress >= 0.75) setAboutState(3)
-          if (self.progress >= 1.0) setAboutState(4)
-
-          console.log(aboutState)
         },
 
         // onEnter: () => {
@@ -59,7 +59,7 @@ export default function page() {
 
   return (
     <div className="mx-auto max-w-7xl flex flex-col items-center justify-center" ref={ref}>
-      <div className="fixed top-0 w-full bg-zinc-900 border border-white p-2"></div>
+      {/* <div className="fixed top-0 w-full bg-zinc-900 border border-white p-2"></div> */}
       <section className="flex flex-col items-center justify-center h-screen bg-zinc-900 w-full relative p-16 gap-4 hero">
         <h1 className="section-heading text-white font-bold text-7xl">mdius</h1>
 
@@ -84,10 +84,18 @@ export default function page() {
           <div className="h-full w-full flex flex-col items-center justify-center gap-2 about-content">
             <div className="h-full w-full bg-zinc-900"></div>
             <div className="flex w-full h-4 items-center justify-between gap-2">
-              <div className="w-full hover:w-[150%] transition-all duration-200 h-full bg-zinc-800"></div>
-              <div className="w-full hover:w-[150%] transition-all duration-200 h-full bg-zinc-900"></div>
-              <div className="w-full hover:w-[150%] transition-all duration-200 h-full bg-zinc-800"></div>
-              <div className="w-full hover:w-[150%] transition-all duration-200 h-full bg-zinc-800"></div>
+              <div className={cn("w-full transition-all duration-200 h-full bg-zinc-800", {
+                "w-[150%] bg-zinc-900": aboutState == 0
+              })}></div>
+              <div className={cn("w-full transition-all duration-200 h-full bg-zinc-800", {
+                "w-[150%] bg-zinc-900": aboutState == 1
+              })}></div>
+              <div className={cn("w-full transition-all duration-200 h-full bg-zinc-800", {
+                "w-[150%] bg-zinc-900": aboutState == 2
+              })}></div>
+              <div className={cn("w-full transition-all duration-200 h-full bg-zinc-800", {
+                "w-[150%] bg-zinc-900": aboutState == 3
+              })}></div>
             </div>
           </div>
           {aboutState == 0 && <div className="h-full w-[80%] mx-4 flex flex-col items-start justify-start about-content">
@@ -114,12 +122,6 @@ export default function page() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet itaque quibusdam debitis, voluptas minima laborum qui cupiditate. Totam, recusandae illum. Eos earum libero exercitationem quisquam necessitatibus totam, nobis ullam.
             </p>
           </div>}
-          {aboutState == 4 && <div className="h-full w-[80%] mx-4 flex flex-col items-start justify-start about-content">
-            <h3 className="text-5xl font-bold text-zinc-900">Tab 5</h3>
-            <p className="text-xl font-semibold text-zinc-800 my-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet itaque quibusdam debitis, voluptas minima laborum qui cupiditate. Totam, recusandae illum. Eos earum libero exercitationem quisquam necessitatibus totam, nobis ullam.
-            </p>
-          </div>}
         </div>
 
         <div className="absolute w-8 h-8 bottom-2 left-2 border-l-4 border-b-4 border-l-zinc-900 border-b-zinc-900"></div>
@@ -134,7 +136,7 @@ export default function page() {
         <h1 className="section-heading text-white/20 font-bold text-2xl">next project in</h1>
         <h1 className="section-heading text-white font-bold text-9xl my-2">00:00:00</h1>
 
-        <div className="bg-white group p-2 relative hover:p-4 duration-300 transition-all cursor-pointer">
+        <div className="bg-white group p-2 relative hover:p-4 duration-300 transition-all cursor-pointer" onClick={() => router.push("/projects")}>
           <h1 className="text-xl font-semibold cursor-pointer px-2">Projects</h1>
 
           <div className="absolute w-2 h-2 duration-200 transition-all group-hover:w-4 group-hover:h-4 bottom-2 left-2 border-l-4 border-b-4 border-l-zinc-900 border-b-zinc-900"></div>

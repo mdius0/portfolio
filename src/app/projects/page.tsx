@@ -1,7 +1,7 @@
 "use client"
 
 import { ArrowDown, CircleCheck } from "lucide-react"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 import { useEffect, useRef } from "react"
 
 export default function Page() {

@@ -13,7 +13,7 @@ import { useRef, useState } from "react"
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function page() {
+export default function Page() {
   const [aboutState, setAboutState] = useState(0)
   const router = useRouter()
   const ref = useRef(null)

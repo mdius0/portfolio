@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { ArrowDown } from "lucide-react"
+import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
@@ -57,6 +58,10 @@ export default function page() {
     })
   }, { scope: ref })
 
+  function scrollToSection() {
+    //implement later
+  }
+
   return (
     <div className="mx-auto max-w-7xl flex flex-col items-center justify-center" ref={ref}>
       {/* <div className="fixed top-0 w-full bg-zinc-900 border border-white p-2"></div> */}
@@ -71,9 +76,17 @@ export default function page() {
           <Link className="w-full bg-white text-zinc-900 font-bold text-lg hover:w-[120%] px-4 py-2 flex transtition-all duration-200 items-center justify-center" href={"#"}>Discord</Link>
         </div>
 
-        <div className="absolute w-8 h-8 bottom-2 left-2 border-l-4 border-b-4 border-l-white border-b-white"></div>
+        <div className="absolute w-8 h-8 top-2 left-2 border-l-4 border-t-4 border-l-white border-t-white"></div>
         <div className="absolute w-8 h-8 top-2 right-2 border-t-4 border-r-4 border-r-white border-t-white"></div>
-        <div className="absolute bottom-2 border-2 p-2 border-white flex items-center text-white justify-center gap-2">
+        
+        <div className="w-full flex items-center justify-center absolute top-2">
+          <div className="p-0 border-2 border-white flex">
+            <div className="flex-grow duration-200 transition-colors p-2 text-zinc-900 cursor-pointer bg-white">Home</div>
+            <div className="flex-grow hover:bg-zinc-700 duration-200 transition-colors p-2 text-white cursor-pointer" onClick={() => router.push("/projects")}>Projects</div>
+          </div>
+        </div>
+
+        <div className="absolute bottom-2 border-2 p-2 border-white flex items-center text-white justify-center gap-2" onClick={() => scrollToSection()}>
           <ArrowDown />
         </div>
       </section>
@@ -105,19 +118,19 @@ export default function page() {
             </p>
           </div>}
           {aboutState == 1 && <div className="h-full w-[80%] mx-4 flex flex-col items-start justify-start about-content">
-            <h3 className="text-5xl font-bold text-zinc-900">Tab 2</h3>
+            <h3 className="text-5xl font-bold text-zinc-900">Tab Two</h3>
             <p className="text-xl font-semibold text-zinc-800 my-2">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet itaque quibusdam debitis, voluptas minima laborum qui cupiditate. Totam, recusandae illum. Eos earum libero exercitationem quisquam necessitatibus totam, nobis ullam.
             </p>
           </div>}
           {aboutState == 2 && <div className="h-full w-[80%] mx-4 flex flex-col items-start justify-start about-content">
-            <h3 className="text-5xl font-bold text-zinc-900">Tab 3</h3>
+            <h3 className="text-5xl font-bold text-zinc-900">Tab Three</h3>
             <p className="text-xl font-semibold text-zinc-800 my-2">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet itaque quibusdam debitis, voluptas minima laborum qui cupiditate. Totam, recusandae illum. Eos earum libero exercitationem quisquam necessitatibus totam, nobis ullam.
             </p>
           </div>}
           {aboutState == 3 && <div className="h-full w-[80%] mx-4 flex flex-col items-start justify-start about-content">
-            <h3 className="text-5xl font-bold text-zinc-900">Tab 4</h3>
+            <h3 className="text-5xl font-bold text-zinc-900">Tab Four</h3>
             <p className="text-xl font-semibold text-zinc-800 my-2">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet itaque quibusdam debitis, voluptas minima laborum qui cupiditate. Totam, recusandae illum. Eos earum libero exercitationem quisquam necessitatibus totam, nobis ullam.
             </p>

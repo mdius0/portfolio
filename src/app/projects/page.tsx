@@ -1,10 +1,12 @@
 "use client"
 
 import { ArrowDown, CircleCheck } from "lucide-react"
+import { useRouter } from "next/router"
 import { useEffect, useRef } from "react"
 
 export default function Page() {
     const ref = useRef(null)
+    const router = useRouter()
 
     useEffect(() => {
         const scrollers = document.querySelectorAll(".scroller")
@@ -35,7 +37,7 @@ export default function Page() {
             <section className="flex flex-col items-center justify-center h-screen bg-zinc-900 w-full relative p-8">
                 <h1 className="text-5xl font-bold text-white text-start w-full my-4">Completed</h1>
                 <div className="w-full flex flex-wrap gap-2 overflow-y-scroll relative">
-                    <div className="absolute bottom-2 border-2 p-2 border-white flex items-center text-white justify-center gap-2">
+                    <div onClick={() => router.push("/projects/1")} className="absolute bottom-2 border-2 p-2 border-white flex items-center text-white justify-center gap-2">
                         <ArrowDown />
                     </div>
                     <div className="relative flex flex-col items-center justify-center gap-2 h-[20rem] w-[25rem]">
@@ -47,7 +49,7 @@ export default function Page() {
                             </div>
                         </div>
                     </div>
-                    <div className="relative flex flex-col items-center justify-center gap-2 h-[20rem] w-[25rem]">
+                    <div onClick={() => router.push("/projects/1")} className="relative flex flex-col items-center justify-center gap-2 h-[20rem] w-[25rem]">
                         <div className="w-full h-[80%] bg-white"></div>
                         <div className="w-full flex items-center justify-between">
                             <div className="h-full flex flex-col">
@@ -56,7 +58,7 @@ export default function Page() {
                             </div>
                         </div>
                     </div>
-                    <div className="relative flex flex-col items-center justify-center gap-2 h-[20rem] w-[25rem]">
+                    <div onClick={() => router.push("/projects/1")} className="relative flex flex-col items-center justify-center gap-2 h-[20rem] w-[25rem]">
                         <div className="w-full h-[80%] bg-white"></div>
                         <div className="w-full flex items-center justify-between">
                             <div className="h-full flex flex-col">
@@ -65,7 +67,7 @@ export default function Page() {
                             </div>
                         </div>
                     </div>
-                    <div className="relative flex flex-col items-center justify-center gap-2 h-[20rem] w-[25rem]">
+                    <div onClick={() => router.push("/projects/1")} className="relative flex flex-col items-center justify-center gap-2 h-[20rem] w-[25rem]">
                         <div className="w-full h-[80%] bg-white"></div>
                         <div className="w-full flex items-center justify-between">
                             <div className="h-full flex flex-col">
@@ -74,7 +76,7 @@ export default function Page() {
                             </div>
                         </div>
                     </div>
-                    <div className="relative flex flex-col items-center justify-center gap-2 h-[20rem] w-[25rem]">
+                    <div onClick={() => router.push("/projects/1")} className="relative flex flex-col items-center justify-center gap-2 h-[20rem] w-[25rem]">
                         <div className="w-full h-[80%] bg-white"></div>
                         <div className="w-full flex items-center justify-between">
                             <div className="h-full flex flex-col">
@@ -83,7 +85,7 @@ export default function Page() {
                             </div>
                         </div>
                     </div>
-                    <div className="relative flex flex-col items-center justify-center gap-2 h-[20rem] w-[25rem]">
+                    <div onClick={() => router.push("/projects/1")} className="relative flex flex-col items-center justify-center gap-2 h-[20rem] w-[25rem]">
                         <div className="w-full h-[80%] bg-white"></div>
                         <div className="w-full flex items-center justify-between">
                             <div className="h-full flex flex-col">

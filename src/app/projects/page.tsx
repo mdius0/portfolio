@@ -35,7 +35,7 @@ export default function Page() {
                 </div>
             </section>
             <section className="flex flex-col items-center justify-center h-screen bg-zinc-900 w-full relative p-8">
-                <h1 className="text-5xl font-bold text-white text-start w-full my-4  bg-grainy bg-emerald-950 py-2">Completed</h1>
+                <h1 className="text-4xl font-bold text-white text-start w-full my-4  bg-grainy bg-emerald-950 py-2">Completed</h1>
                 <div className="w-full flex flex-wrap gap-2 overflow-y-scroll relative">
                     <div onClick={() => router.push("/projects/1")} className="absolute bottom-2 border-2 p-2 border-white flex items-center text-white justify-center gap-2">
                         <ArrowDown />
@@ -97,7 +97,7 @@ export default function Page() {
                 </div>
             </section>
             <section className="flex flex-col items-center justify-center h-screen bg-zinc-900 w-full relative p-8">
-                <h1 className="text-5xl font-bold text-white text-start w-full my-4 bg-grainy bg-amber-950 py-2">Working on</h1>
+                <h1 className="text-4xl font-bold text-white text-start w-full my-4 bg-grainy bg-amber-950 py-2">In Progress</h1>
                 <div className="w-full flex flex-wrap gap-2 overflow-y-scroll relative">
                     <div onClick={() => router.push("/projects/1")} className="relative cursor-pointer flex flex-col items-center justify-center gap-2 h-[20rem] w-[25rem]">
                         <div className="w-full h-[80%] bg-zinc-400 bg-grainy"></div>

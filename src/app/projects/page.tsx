@@ -45,7 +45,7 @@ export default function Page() {
                         <div className="w-full flex items-center justify-between">
                             <div className="h-full flex flex-col">
                                 <h1 className="text-white text-xl font-semibold">Project One</h1>
-                                <h3 className="text-sm text-emerald-400"><CircleCheck /> Completed 5/11/24</h3>
+                                <h3 className="text-sm text-emerald-400 flex gap-2"><CircleCheck /> Completed 5/11/24</h3>
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@ export default function Page() {
                         <div className="w-full flex items-center justify-between">
                             <div className="h-full flex flex-col">
                                 <h1 className="text-white text-xl font-semibold">Project Two</h1>
-                                <h3 className="text-sm text-emerald-400"><CircleCheck /> Completed 5/11/24</h3>
+                                <h3 className="text-sm text-emerald-400 flex gap-2"><CircleCheck /> Completed 5/11/24</h3>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@ export default function Page() {
                         <div className="w-full flex items-center justify-between">
                             <div className="h-full flex flex-col">
                                 <h1 className="text-white text-xl font-semibold">Project Three</h1>
-                                <h3 className="text-sm text-emerald-400"><CircleCheck /> Completed 5/11/24</h3>
+                                <h3 className="text-sm text-emerald-400 flex gap-2"><CircleCheck /> Completed 5/11/24</h3>
                             </div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@ export default function Page() {
                         <div className="w-full flex items-center justify-between">
                             <div className="h-full flex flex-col">
                                 <h1 className="text-white text-xl font-semibold">Project Four</h1>
-                                <h3 className="text-sm text-emerald-400"><CircleCheck /> Completed 5/11/24</h3>
+                                <h3 className="text-sm text-emerald-400 flex gap-2"><CircleCheck /> Completed 5/11/24</h3>
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,7 @@ export default function Page() {
                         <div className="w-full flex items-center justify-between">
                             <div className="h-full flex flex-col">
                                 <h1 className="text-white text-xl font-semibold">Project Five</h1>
-                                <h3 className="text-sm text-emerald-400"><CircleCheck /> Completed 5/11/24</h3>
+                                <h3 className="text-sm text-emerald-400 flex gap-2"><CircleCheck /> Completed 5/11/24</h3>
                             </div>
                         </div>
                     </div>
@@ -90,7 +90,7 @@ export default function Page() {
                         <div className="w-full flex items-center justify-between">
                             <div className="h-full flex flex-col">
                                 <h1 className="text-white text-xl font-semibold">Project Six</h1>
-                                <h3 className="text-sm text-emerald-400"><CircleCheck /> Completed 5/11/24</h3>
+                                <h3 className="text-sm text-emerald-400 flex gap-2"><CircleCheck /> Completed 5/11/24</h3>
                             </div>
                         </div>
                     </div>

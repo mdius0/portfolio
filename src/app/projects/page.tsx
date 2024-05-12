@@ -40,7 +40,7 @@ export default function Page() {
                     <div onClick={() => router.push("/projects/1")} className="absolute bottom-2 border-2 p-2 border-white flex items-center text-white justify-center gap-2">
                         <ArrowDown />
                     </div>
-                    <div className="relative flex flex-col items-center justify-center gap-2 h-[20rem] w-[25rem]">
+                    <div onClick={() => router.push("/projects/1")} className="relative cursor-pointer flex flex-col items-center justify-center gap-2 h-[20rem] w-[25rem]">
                         <div className="w-full h-[80%] bg-white"></div>
                         <div className="w-full flex items-center justify-between">
                             <div className="h-full flex flex-col">

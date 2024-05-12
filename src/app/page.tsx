@@ -91,11 +91,11 @@ export default function Page() {
         </div>
       </section>
       <section className="flex flex-col items-start justify-center h-screen bg-red-500 w-full relative p-16 about bg-grainy">
-        <h1 className="section-heading text-zinc-900 font-bold text-9xl about-content">About me</h1>
+        <h1 className="section-heading text-zinc-900 font-bold text-9xl max-md:text-3xl about-content">About me</h1>
 
-        <div className="w-full h-1/2 flex items-center justify-center">
+        <div className="w-full h-1/2 flex max-md:flex-col items-center justify-center">
           <div className="h-full w-full flex flex-col items-center justify-center gap-2 about-content">
-            <div className="h-full w-full bg-zinc-900"></div>
+            <div className="h-full w-full max-md:h-[20rem] bg-zinc-900"></div>
             <div className="flex w-full h-4 items-center justify-between gap-2">
               <div className={cn("w-full transition-all duration-200 h-full bg-zinc-800", {
                 "w-[150%] bg-zinc-900": aboutState == 0
@@ -111,27 +111,27 @@ export default function Page() {
               })}></div>
             </div>
           </div>
-          {aboutState == 0 && <div className="h-full w-[80%] mx-4 flex flex-col items-start justify-start about-content">
+          {aboutState == 0 && <div className="h-full w-[80%] max-md:w-full mx-4 flex flex-col items-start justify-start about-content">
             <h3 className="text-5xl font-bold text-zinc-900">Tab One</h3>
-            <p className="text-xl font-semibold text-zinc-800 my-2">
+            <p className="text-xl font-semibold text-zinc-800 my-2 max-md:text-sm">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet itaque quibusdam debitis, voluptas minima laborum qui cupiditate. Totam, recusandae illum. Eos earum libero exercitationem quisquam necessitatibus totam, nobis ullam.
             </p>
           </div>}
-          {aboutState == 1 && <div className="h-full w-[80%] mx-4 flex flex-col items-start justify-start about-content">
+          {aboutState == 1 && <div className="h-full w-[80%] max-md:w-full mx-4 flex flex-col items-start justify-start about-content">
             <h3 className="text-5xl font-bold text-zinc-900">Tab Two</h3>
-            <p className="text-xl font-semibold text-zinc-800 my-2">
+            <p className="text-xl font-semibold text-zinc-800 my-2 max-md:text-sm">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet itaque quibusdam debitis, voluptas minima laborum qui cupiditate. Totam, recusandae illum. Eos earum libero exercitationem quisquam necessitatibus totam, nobis ullam.
             </p>
           </div>}
-          {aboutState == 2 && <div className="h-full w-[80%] mx-4 flex flex-col items-start justify-start about-content">
+          {aboutState == 2 && <div className="h-full w-[80%] max-md:w-full mx-4 flex flex-col items-start justify-start about-content">
             <h3 className="text-5xl font-bold text-zinc-900">Tab Three</h3>
-            <p className="text-xl font-semibold text-zinc-800 my-2">
+            <p className="text-xl font-semibold text-zinc-800 my-2 max-md:text-sm">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet itaque quibusdam debitis, voluptas minima laborum qui cupiditate. Totam, recusandae illum. Eos earum libero exercitationem quisquam necessitatibus totam, nobis ullam.
             </p>
           </div>}
-          {aboutState == 3 && <div className="h-full w-[80%] mx-4 flex flex-col items-start justify-start about-content">
+          {aboutState == 3 && <div className="h-full w-[80%] max-md:w-full mx-4 flex flex-col items-start justify-start about-content">
             <h3 className="text-5xl font-bold text-zinc-900">Tab Four</h3>
-            <p className="text-xl font-semibold text-zinc-800 my-2">
+            <p className="text-xl font-semibold text-zinc-800 my-2 max-md:text-sm">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet itaque quibusdam debitis, voluptas minima laborum qui cupiditate. Totam, recusandae illum. Eos earum libero exercitationem quisquam necessitatibus totam, nobis ullam.
             </p>
           </div>}
@@ -147,7 +147,7 @@ export default function Page() {
 
       <section className="flex flex-col gap-2 items-center justify-center h-screen bg-zinc-900 w-full relative next">
         <h1 className="section-heading text-white/20 font-bold text-2xl">next project in</h1>
-        <h1 className="section-heading text-white font-bold text-9xl my-2">00:00:00</h1>
+        <h1 className="section-heading text-white font-bold text-9xl max-md:text-5xl my-2">00:00:00</h1>
 
         <div className="bg-white group p-2 relative hover:p-4 duration-300 transition-all cursor-pointer" onClick={() => router.push("/projects")}>
           <h1 className="text-xl font-semibold cursor-pointer px-2">Projects</h1>
